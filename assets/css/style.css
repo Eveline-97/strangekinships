@@ -1,4 +1,164 @@
 :root {
     --accent: rgb(188, 51, 174);
-    --background: rgb(227, 230, 196);
+    --accent-tr: rgb(188, 51, 174, 0.8);
+    --accent-tr2: rgba(160, 90, 160, 0.85);
+    --background: rgb(226, 217, 184);
+    --pink: rgb(165, 82, 106);
+    --pink-tr: rgb(165, 82, 106, 0.8);
+}
+
+/*import fonts*/
+@import url('/assets/fonts/LexendExa-Bold.ttf');
+@import url('/assets/fonts/LexendExa-Light.ttf');
+@import url('/assets/fonts/LexendExa-Medium.ttf');
+@import url('/assets/fonts/LexendExa-Regular.ttf');
+
+html {
+    background-color: var(--background);
+    background-image: url('../img/BackgroundOnly2.png');
+    background-size: cover;
+    background-repeat: repeat-y;
+    background-position: left top;
+}
+
+body {
+    color: white;
+    display: flex;
+    font-family: 'Lato';
+    flex-flow: column nowrap;
+    align-items: center;
+    min-height: 98vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Zapfino';
+}
+
+h1 {
+    color: var(--pink);
+    font-size: 2.5em;
+}
+
+h1:hover {
+    text-shadow: 1px 1px white;
+    cursor: pointer;
+}
+
+p,
+ul,
+li,
+button,
+a {
+    font-family: 'Lora';
+    line-height: 1.5em;
+}
+
+a {
+    color: white;
+}
+
+a:hover,
+a:active {
+    text-decoration: none;
+}
+
+main {
+    display: flex;
+    flex-flow: column nowrap;
+    flex: 1;
+}
+
+footer {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 50px;
+    text-align: center;
+    margin-top: 20px;
+    border-top: solid 1px var(--pink);
+    color: var(--pink);
+    font-size: 1.1em;
+}
+
+footer a {
+    color: var(--pink);
+}
+
+/*button*/
+button {
+    align-items: center;
+    appearance: none;
+    border-radius: 24px;
+    border-style: none;
+    box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px, rgba(0, 0, 0, .14) 0 6px 10px 0, rgba(0, 0, 0, .12) 0 1px 18px 0;
+    box-sizing: border-box;
+    color: var(--pink);
+    background-color: rgb(255, 255, 255, 0);
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 18px;
+    font-weight: 500;
+    height: 48px;
+    justify-content: center;
+    max-width: 100%;
+    overflow: visible;
+    padding: 2px 24px;
+    position: relative;
+    text-align: center;
+    touch-action: manipulation;
+    width: auto;
+    z-index: 0;
+    margin-top: 3em;
+    transition: all 0.3s ease;
+    border: 1px solid var(--pink);
+}
+
+button:hover,
+button:active {
+    box-shadow: 1px 1px 10px var(--pink), 0 0 25px var(--pink);
+    outline: none;
+    /*color: white;
+    /*background-color: var(--pink);*/
+}
+
+/*flex container*/
+.container {
+    display: flex;
+    flex-flow: row nowrap;
+    max-width: 800px;
+}
+
+.container>* {
+    margin: 1.2em;
+}
+
+p.background {
+    text-align: justify;
+    padding: 2rem;
+    /*background-color: var(--pink-tr);*/
+    color: var(--pink);
+    align-self: center;
+    border: 1px solid var(--pink);
+    border-radius: 0 24px;
+}
+
+p.background a {
+    color: var(--pink);
+}
+
+button {
+    align-self: center;
+}
+
+#pigeon {
+    height: 40vh;
+    border: 1px solid var(--pink);
+    border-radius: 50px;
+    box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px, rgba(0, 0, 0, .14) 0 6px 10px 0, rgba(0, 0, 0, .12) 0 1px 18px 0;
 }
