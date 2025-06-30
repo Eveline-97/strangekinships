@@ -3,31 +3,33 @@
     --accent-tr: rgb(188, 51, 174, 0.8);
     --accent-tr2: rgba(160, 90, 160, 0.85);
     --background: rgb(226, 217, 184);
-    --pink: rgb(165, 82, 106);
+    --pink-old: rgb(165, 82, 106);
+    --pink: rgb(188, 51, 174);
+    --yellow: rgb(252, 255, 94);
     --pink-tr: rgb(165, 82, 106, 0.8);
+    --grey: rgb(230, 228, 228);
 }
 
 /*import fonts*/
-@import url('/assets/fonts/LexendExa-Bold.ttf');
-@import url('/assets/fonts/LexendExa-Light.ttf');
-@import url('/assets/fonts/LexendExa-Medium.ttf');
-@import url('/assets/fonts/LexendExa-Regular.ttf');
+@import url('https://fonts.cdnfonts.com/css/zapfino');
+
+@font-face {
+    font-family: 'Jost*';
+    src: url('../fonts/Jost-500-Medium.ttf') format('truetype');
+}
 
 html {
-    background-color: var(--background);
-    background-image: url('../img/BackgroundOnly2.png');
-    background-size: cover;
-    background-repeat: repeat-y;
-    background-position: left top;
+    background-color: white;
+    margin: 0;
 }
 
 body {
     color: white;
     display: flex;
-    font-family: 'Lato';
     flex-flow: column nowrap;
     align-items: center;
-    min-height: 98vh;
+    min-height: 100vh;
+    margin: 0;
 }
 
 h1,
@@ -38,9 +40,19 @@ h5 {
     font-family: 'Zapfino';
 }
 
+header {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: var(--yellow);
+}
+
 h1 {
-    color: var(--pink);
+    color: black;
     font-size: 2.5em;
+    animation: textshadow 120ms ease-in-out infinite;
 }
 
 h1:hover {
@@ -53,23 +65,36 @@ ul,
 li,
 button,
 a {
-    font-family: 'Lora';
+    font-family: 'Jost*';
     line-height: 1.5em;
+    background-color: black;
 }
 
 a {
-    color: white;
+    color: var(--yellow);
+    text-shadow: 1px 1px white;
 }
 
 a:hover,
 a:active {
     text-decoration: none;
+    animation: textshadow 120ms ease-in-out infinite;
+}
+
+em {
+    color: black;
+    background-color: var(--yellow);
+    animation: textshadow 120ms ease-in-out infinite;
 }
 
 main {
     display: flex;
     flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
     flex: 1;
+    width: 100%;
+    background-color: var(--grey);
 }
 
 footer {
@@ -78,28 +103,21 @@ footer {
     align-items: center;
     justify-content: center;
     width: 100%;
-    min-height: 50px;
+    background-color: black;
+    min-height: 10px;
     text-align: center;
-    margin-top: 20px;
-    border-top: solid 1px var(--pink);
-    color: var(--pink);
     font-size: 1.1em;
-}
-
-footer a {
-    color: var(--pink);
+    margin: 0;
 }
 
 /*button*/
 button {
     align-items: center;
     appearance: none;
-    border-radius: 24px;
     border-style: none;
     box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px, rgba(0, 0, 0, .14) 0 6px 10px 0, rgba(0, 0, 0, .12) 0 1px 18px 0;
     box-sizing: border-box;
-    color: var(--pink);
-    background-color: rgb(255, 255, 255, 0);
+    background-color: var(--yellow);
     cursor: pointer;
     display: inline-flex;
     font-size: 18px;
@@ -116,15 +134,13 @@ button {
     z-index: 0;
     margin-top: 3em;
     transition: all 0.3s ease;
-    border: 1px solid var(--pink);
 }
 
 button:hover,
 button:active {
-    box-shadow: 1px 1px 10px var(--pink), 0 0 25px var(--pink);
+    box-shadow: 1px 1px 10px white, 0 0 25px var(--yellow);
     outline: none;
-    /*color: white;
-    /*background-color: var(--pink);*/
+    background-color: var(--yellow);
 }
 
 /*flex container*/
@@ -140,16 +156,24 @@ button:active {
 
 p.background {
     text-align: justify;
-    padding: 2rem;
     /*background-color: var(--pink-tr);*/
-    color: var(--pink);
+    color: white;
     align-self: center;
-    border: 1px solid var(--pink);
-    border-radius: 0 24px;
+    text-shadow: 1px 1px var(--pink);
 }
 
-p.background a {
-    color: var(--pink);
+@keyframes textshadow {
+    0% {
+        text-shadow: -1px 1px white;
+    }
+
+    50% {
+        text-shadow: 1px 1px white;
+    }
+
+    100% {
+        text-shadow: -1px 1px white;
+    }
 }
 
 button {
@@ -158,7 +182,90 @@ button {
 
 #pigeon {
     height: 40vh;
-    border: 1px solid var(--pink);
-    border-radius: 50px;
-    box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px, rgba(0, 0, 0, .14) 0 6px 10px 0, rgba(0, 0, 0, .12) 0 1px 18px 0;
+    /*filter: contrast(4);*/
+    animation: pic-glitch .2s linear infinite, rotate .3s ease-in infinite;
+}
+
+@keyframes pic-glitch {
+    0% {
+        filter: contrast(1);
+    }
+
+    10% {
+        filter: contrast(2);
+    }
+
+    50% {
+        filter: contrast(3);
+    }
+
+    70% {
+        filter: contrast(10);
+    }
+
+    80% {
+        filter: contrast(4);
+    }
+
+    100% {
+        filter: contrast(1);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate3d(0, 0, 0, 0);
+    }
+
+    30% {
+        transform: rotate3d(0, 0.05, 0.05, -0.05rad);
+    }
+}
+
+@keyframes pic-glitch-og {
+    0% {
+        background-position: 0 0;
+        filter: hue-rotate(-360deg);
+    }
+
+    10% {
+        background-position: 5px 0;
+    }
+
+    20% {
+        background-position: -5px 0;
+    }
+
+    30% {
+        background-position: 15px 0;
+    }
+
+    40% {
+        background-position: 5px 0;
+    }
+
+    50% {
+        background-position: -25px 0;
+    }
+
+    60% {
+        background-position: -50px 0;
+    }
+
+    70% {
+        background-position: 0 -20px;
+    }
+
+    80% {
+        background-position: -60px -20px;
+    }
+
+    81% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 0 0;
+        filter: hue-rotate(0deg);
+    }
 }
