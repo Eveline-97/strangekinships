@@ -32,11 +32,7 @@ body {
     margin: 0;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
+h1 {
     font-family: 'Zapfino';
 }
 
@@ -68,12 +64,19 @@ button,
 a {
     font-family: 'Jost*';
     line-height: 1.5em;
+}
+
+p,
+a,
+button {
     background-color: black;
+
 }
 
 a {
     color: var(--yellow);
     text-shadow: 1px 1px white;
+    cursor: pointer;
 }
 
 a:hover,
@@ -132,8 +135,8 @@ button {
     text-align: center;
     touch-action: manipulation;
     width: auto;
-    margin-top: 3em;
-    margin-bottom: 3em;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
     transition: all 0.3s ease;
 }
 
@@ -223,50 +226,55 @@ button {
     }
 }
 
-@keyframes pic-glitch-og {
-    0% {
-        background-position: 0 0;
-        filter: hue-rotate(-360deg);
-    }
+/*Chapters*/
+.chapter-container {
+    list-style: none;
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+}
 
-    10% {
-        background-position: 5px 0;
-    }
+.media-container {
+    position: relative;
+    text-align: center;
+    width: 300px;
+    height: 300px;
+    padding: 5em;
+}
 
-    20% {
-        background-position: -5px 0;
-    }
+.media-container img {
+    width: 300px;
+    animation: pic-glitch .2s linear infinite, rotate .3s ease-in infinite;
+    z-index: 4;
+    float: center;
+}
 
-    30% {
-        background-position: 15px 0;
-    }
+.caption {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    padding: 1em;
+    margin: 5em;
+    opacity: 0.7;
+    width: 200px;
+    position: absolute;
+    display: none;
+    left: -4em;
+    top: -2em;
+    float: bottom;
+    z-index: 6;
+    border: 5px solid var(--yellow);
+    cursor: pointer !important;
+}
 
-    40% {
-        background-position: 5px 0;
-    }
+.media-container:hover .caption {
+    display: flex;
+}
 
-    50% {
-        background-position: -25px 0;
-    }
-
-    60% {
-        background-position: -50px 0;
-    }
-
-    70% {
-        background-position: 0 -20px;
-    }
-
-    80% {
-        background-position: -60px -20px;
-    }
-
-    81% {
-        background-position: 0 0;
-    }
-
-    100% {
-        background-position: 0 0;
-        filter: hue-rotate(0deg);
-    }
+.open {
+    font-size: 1.5em;
 }
