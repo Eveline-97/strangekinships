@@ -53,6 +53,7 @@ h1 {
     color: black;
     font-size: 2.5em;
     animation: textshadow 120ms ease-in-out infinite;
+    text-align: center;
 }
 
 h1:hover {
@@ -131,8 +132,8 @@ button {
     text-align: center;
     touch-action: manipulation;
     width: auto;
-    z-index: 0;
     margin-top: 3em;
+    margin-bottom: 3em;
     transition: all 0.3s ease;
 }
 
