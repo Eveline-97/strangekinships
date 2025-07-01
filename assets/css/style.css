@@ -251,6 +251,11 @@ button {
     float: center;
 }
 
+.media-container:hover img {
+    filter: contrast(3);
+    animation: none;
+}
+
 .caption {
     display: flex;
     flex-flow: column nowrap;
