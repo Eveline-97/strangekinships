@@ -16,7 +16,7 @@
         <h1>strange kinships</h1>
         <nav>
             <ul>
-                <li><a href="/chapters.html">Chapters</a></li>
+                <li><a href="./chapters.html">Chapters</a></li>
                 <li><a>Show map</a></li>
             </ul>
         </nav>
@@ -31,9 +31,8 @@
                 <button id="stop">⏹</button>
             </div>
             <div class="chapter-buttons">
-                <button id="previous">
-                    << Previous chapter</button>
-                        <button id="next">Next chapter >></button>
+                <button id="previous"><< Previous chapter</button>
+                <button id="next">Next chapter >></button>
             </div>
             <div class="transcript popup">
                 <h3 class="pop">Transcript <span class="arrow">&rArr;</span></h3>
@@ -87,13 +86,8 @@
                 container: '#waveform',
                 waveColor: 'rgb(252, 255, 94)',
                 progressColor: 'black',
-                url: '/assets/audio/test.wav',
+                url: './assets/audio/test.wav',
             })
-
-            //controls under waveform
-            const controls = document.getElementById('audio-controls');
-            const wave = document.getElementById('waveform');
-            //controls.parentNode.insertBefore(controls, wave);
 
             const play = document.getElementById('play');
             play.onclick = () => togglePlay();
