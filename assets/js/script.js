@@ -1,20 +1,43 @@
-/* controls */
+/* navigation controls */
 const next = document.getElementById('next');
+const previous = document.getElementById('previous');
 const home = document.getElementById('home');
 const chapters = document.getElementById('chapters');
-const h1 = document.getElementsByTagName('h1');
 
-// go to next chapter...
-if (next) {
-    
+// go to next chapter
+const nextChapter = {
+    '': './chapter1.html',
+    'index': './chapter1.html',
+    'chapter1': './chapter2.html',
+    'chapter2': './chapter3.html',
+    'chapter3': './chapter4.html',
+    'chapter4': './chapter5.html'
 }
+
+const previousChapter = {
+    'chapter2': './chapter1.html',
+    'chapter3': './chapter2.html',
+    'chapter4': './chapter3.html',
+    'chapter5': './chapter4.html'
+}
+
+let pageName = location.pathname.slice(1).replace('.html', '');
+console.log('page name: ' + pageName);
+
+if (next) next.onclick = () => openNextChapter(pageName);
+if (previous) previous.onclick = () => openPrevChapter(pageName);
+
+const openNextChapter = curr => window.location = nextChapter[curr];
+const openPrevChapter = curr => window.location = previousChapter[curr];
+
+//other navigation
 if (chapters) {
-    chapters.onclick = () => location.replace('./chapters.html');
+    chapters.onclick = () => window.location = './chapters.html';
 }
 if (home) {
-    home.onclick = () => location.replace('./index.html');
+    home.onclick = () => window.location = './index.html';
 }
-h1[0].onclick = () => location.replace('./index.html');
+document.getElementById('logo').onclick = () => window.location = './index.html';
 
 /* chapters - show transcript */
 const popups = document.getElementsByClassName('popup');
