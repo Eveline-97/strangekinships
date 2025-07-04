@@ -161,8 +161,8 @@ button {
     text-align: center;
     touch-action: manipulation;
     width: auto;
-    margin-top: 1.5em;
-    margin-bottom: 1.5em;
+    margin-top: 1.2em;
+    margin-bottom: 1.2em;
     transition: all 0.3s ease;
 }
 
