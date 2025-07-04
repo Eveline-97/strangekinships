@@ -66,3 +66,37 @@ const toggleArrow = item => {
         item.innerHTML = '&dArr;';
     else item.innerHTML = '⇒';
 }
+
+/*=== show map ===*/
+const overlay = document.getElementById('overlay');
+const showButton = document.getElementById('show-map');
+const closeMap = document.getElementById('close');
+const mapContainer = document.getElementById('map-container');
+let mapShown = false;
+
+const toggleOverlay = () => {
+    const main = document.getElementsByTagName('main')[0];
+    if (main.classList.contains('overlay')) main.classList.remove('overlay');
+    else main.classList.add('overlay');
+}
+
+const toggleShowMap = () => {
+    if (mapShown) {
+        showButton.innerHTML = 'Show map';
+        toggle(mapContainer);
+        toggle(overlay);
+        toggleOverlay();
+        document.documentElement.style.overflow = 'scroll';
+        mapShown = false;
+    } else {
+        showButton.innerHTML = 'Hide map';
+        toggle(mapContainer);
+        toggle(overlay);
+        toggleOverlay();
+        document.documentElement.style.overflow = 'hidden';
+        mapShown = true;
+    }
+}
+
+if (showButton) showButton.onclick = toggleShowMap;
+if (closeMap) closeMap.onclick = toggleShowMap;
