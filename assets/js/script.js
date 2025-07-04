@@ -21,7 +21,7 @@ const previousChapter = {
     'chapter5': './chapter4.html'
 }
 
-let pageName = location.pathname.slice(1).replace('.html', '');
+let pageName = location.pathname.slice(1).replace('.html', '').replace('strangekinships/', '');
 console.log('page name: ' + pageName);
 
 if (next) next.onclick = () => openNextChapter(pageName);
