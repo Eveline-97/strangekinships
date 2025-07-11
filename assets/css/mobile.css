@@ -1,4 +1,8 @@
 @media screen and (min-width: 100px) and (max-width: 600px) {
+    footer {
+        font-size: 0.9em;
+    }
+
     .container {
         display: flex;
         flex-flow: column nowrap;
@@ -31,6 +35,31 @@
         width: 250px;
     }
 
+}
+
+@media screen and (max-width: 460px) {
+    footer {
+        display: flex;
+        flex-flow: column-reverse nowrap;
+    }
+
+    footer p {
+        line-height: 1em;
+        padding: 0;
+        margin: 0;
+    }
+
+    #credits {
+        margin-top: 0.5em;
+    }
+
+    #copyright {
+        margin-bottom: 0.5em;
+    }
+
+    #help-p {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 450px) {
@@ -125,7 +154,7 @@
         padding: 10px;
         width: 35px;
     }
-    
+
     .media-container img {
         width: 160px;
     }
