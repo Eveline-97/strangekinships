@@ -216,6 +216,10 @@ p.background,
     background-color: black;
 }
 
+p.quote {
+    text-shadow: 1px 1px var(--yellow);
+}
+
 @keyframes textshadow {
     0% {
         text-shadow: -1px 1px white;
