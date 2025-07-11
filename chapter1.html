@@ -84,44 +84,7 @@
         <p id="copyright">&copy; 2025 <a href="https://evelinevervliet.com">Eveline Vervliet</a></p>
         <p id="credits"><a href="./credits.html">Credits</a></p>
         <script src="./assets/js/script.js"></script>
-
-        <script type="module">
-            import WaveSurfer from 'https://cdn.jsdelivr.net/npm/wavesurfer.js@7/dist/wavesurfer.esm.js'
-
-            const wavesurfer = WaveSurfer.create({
-                container: '#waveform',
-                waveColor: 'rgb(252, 255, 94)',
-                progressColor: 'black',
-                url: './assets/audio/test.wav',
-            })
-
-            const play = document.getElementById('play');
-            play.onclick = () => togglePlay();
-            document.getElementById('stop').onclick = () => {
-                wavesurfer.stop();
-                play.innerHTML = '⏵';
-                curr = 'play';
-            }
-
-            let curr = 'play';
-            const togglePlay = () => {
-                if (curr == 'play') {
-                    wavesurfer.play();
-                    play.innerHTML = '⏸';
-                    curr = 'pause';
-                } else {
-                    wavesurfer.pause();
-                    play.innerHTML = '⏵';
-                    curr = 'play';
-                }
-            }
-
-            wavesurfer.on('interaction', () => {
-                wavesurfer.pause();
-                play.innerHTML = '⏵';
-                curr = 'play';
-            })
-        </script>
+        <script type="module" src="./assets/js/audio.js"></script>
     </footer>
 
 </body>
