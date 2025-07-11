@@ -88,6 +88,10 @@ em {
     animation: textshadow 120ms ease-in-out infinite;
 }
 
+ul {
+    list-style-type: '--- ';
+}
+
 /*=== header ===*/
 header {
     display: flex;
@@ -113,6 +117,10 @@ nav ul li a {
     color: black;
     margin: 0 0.2em;
     text-decoration: underline;
+}
+
+.italic {
+    font-style: italic;
 }
 
 /*=== main ===*/
@@ -208,6 +216,7 @@ button:active {
     align-items: center;
 }
 
+.container.background,
 p.background,
 .transcript {
     text-align: justify;
