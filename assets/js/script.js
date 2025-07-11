@@ -10,19 +10,21 @@ if (up) up.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
 // go to next chapter
 const nextChapter = {
-    '': './chapter1.html',
-    'index': './chapter1.html',
-    'chapter1': './chapter2.html',
-    'chapter2': './chapter3.html',
-    'chapter3': './chapter4.html',
-    'chapter4': './chapter5.html'
+    '': './chapter1',
+    'index': './chapter1',
+    'chapter1': './chapter2',
+    'chapter2': './chapter3',
+    'chapter3': './chapter4',
+    'chapter4': './chapter5',
+    'chapter5': './chapters'
 }
 
 const previousChapter = {
-    'chapter2': './chapter1.html',
-    'chapter3': './chapter2.html',
-    'chapter4': './chapter3.html',
-    'chapter5': './chapter4.html'
+    'chapter1': './chapters',
+    'chapter2': './chapter1',
+    'chapter3': './chapter2',
+    'chapter4': './chapter3',
+    'chapter5': './chapter4'
 }
 
 let pageName = location.pathname.slice(1).replace('.html', '').replace('strangekinships/', '');
@@ -35,9 +37,9 @@ const openNextChapter = curr => window.location = nextChapter[curr];
 const openPrevChapter = curr => window.location = previousChapter[curr];
 
 //other navigation
-if (chapters) chapters.onclick = () => window.location = './chapters.html';
-if (home) home.onclick = () => window.location = './index.html';
-document.getElementById('logo').onclick = () => window.location = './index.html';
+if (chapters) chapters.onclick = () => window.location = './chapters';
+if (home) home.onclick = () => window.location = './';
+document.getElementById('logo').onclick = () => window.location = './';
 
 /* chapters - show transcript */
 const popups = document.getElementsByClassName('popup');
