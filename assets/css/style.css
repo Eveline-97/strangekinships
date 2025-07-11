@@ -438,6 +438,14 @@ button {
     margin: 0 0.2em 1.5em 0.2em;
 }
 
+#timeline {
+    background-color: var(--grey);
+    color: black;
+    align-self: center;
+    margin-top: -2em;
+    z-index: 5;
+}
+
 /*=== Map ===*/
 #map-container {
     position: absolute;

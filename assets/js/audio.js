@@ -14,8 +14,8 @@ const wavesurfer = WaveSurfer.create({
     container: '#waveform',
     waveColor: 'rgb(252, 255, 94)',
     progressColor: 'black',
-    url: files[chapterNumber-1],
-})
+    url: files[chapterNumber - 1],
+});
 
 const play = document.getElementById('play');
 play.onclick = () => togglePlay();
@@ -23,7 +23,9 @@ document.getElementById('stop').onclick = () => {
     wavesurfer.stop();
     play.innerHTML = '⏵';
     curr = 'play';
+    timeline();
 }
+timeline();
 
 let curr = 'play';
 const togglePlay = () => {
@@ -35,6 +37,7 @@ const togglePlay = () => {
         wavesurfer.pause();
         play.innerHTML = '⏵';
         curr = 'play';
+        timeline();
     }
 }
 
@@ -42,4 +45,29 @@ wavesurfer.on('interaction', () => {
     wavesurfer.pause();
     play.innerHTML = '⏵';
     curr = 'play';
+    timeline();
 })
+
+wavesurfer.on('audioprocess', function () {
+    timeline();
+});
+
+/* timeline */
+function timeline() {
+    let totalMin, totalSec;
+    let currentMin, currentSec;
+    [totalMin, totalSec] = calculateMinSec(wavesurfer.getDuration());
+    [currentMin, currentSec] = calculateMinSec(wavesurfer.getCurrentTime());
+    document.getElementById('time-total').innerText = `${totalMin}:${totalSec}`;
+    document.getElementById('time-current').innerText = `${currentMin}:${currentSec}`;
+}
+
+function calculateMinSec(seconds) {
+    let min = Math.floor(seconds / 60);
+    let sec = Math.floor(seconds - min * 60);
+
+    if (sec < 10) {
+        sec = `0${sec}`;
+    }
+    return [min, sec];
+}
