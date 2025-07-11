@@ -128,16 +128,27 @@ main {
 
 /*=== footer ===*/
 footer {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-areas: "nothing copyright credits";
     width: 100%;
     background-color: black;
     min-height: 10px;
     text-align: center;
     font-size: 1.1em;
     margin: 0;
+}
+
+#coyright {
+    grid-area: copyright;
+}
+
+#credits {
+    grid-area: credits;
+}
+
+#credits a {
+    color: white;
+    text-shadow: none;
 }
 
 /*=== button ===*/
@@ -171,6 +182,10 @@ button:active {
     box-shadow: 1px 1px 10px white, 0 0 25px var(--yellow);
     outline: none;
     background-color: var(--yellow);
+}
+
+#up {
+    margin: 3em 0;
 }
 
 /*flex container*/
@@ -357,7 +372,8 @@ button {
     cursor: pointer;
 }
 
-.pop:hover, .pop:active {
+.pop:hover,
+.pop:active {
     animation: textshadow-pink 120ms ease-in-out infinite;
 }
 
@@ -369,6 +385,7 @@ button {
 .poppy {
     display: none;
 }
+
 .poppy.shown {
     display: inline-block;
 }
@@ -380,7 +397,7 @@ button {
     align-items: center;
 }
 
-.chapter-buttons > * {
+.chapter-buttons>* {
     margin: 1em 0.2em;
     width: 210px;
 }
@@ -402,7 +419,7 @@ button {
     align-items: center;
 }
 
-#audio-controls > * {
+#audio-controls>* {
     margin: 0 0.2em 1.5em 0.2em;
 }
 
@@ -442,6 +459,7 @@ button {
 #overlay.shown {
     display: block;
 }
+
 /*
 button#close {
     align-self: flex-start;

@@ -3,6 +3,10 @@ const next = document.getElementById('next');
 const previous = document.getElementById('previous');
 const home = document.getElementById('home');
 const chapters = document.getElementById('chapters');
+const up = document.getElementById('up');
+
+// scroll to top
+if (up) up.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
 // go to next chapter
 const nextChapter = {
@@ -31,12 +35,8 @@ const openNextChapter = curr => window.location = nextChapter[curr];
 const openPrevChapter = curr => window.location = previousChapter[curr];
 
 //other navigation
-if (chapters) {
-    chapters.onclick = () => window.location = './chapters.html';
-}
-if (home) {
-    home.onclick = () => window.location = './index.html';
-}
+if (chapters) chapters.onclick = () => window.location = './chapters.html';
+if (home) home.onclick = () => window.location = './index.html';
 document.getElementById('logo').onclick = () => window.location = './index.html';
 
 /* chapters - show transcript */
