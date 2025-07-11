@@ -130,6 +130,7 @@ main {
 footer {
     display: grid;
     grid-template-areas: "nothing copyright credits";
+    grid-template-columns: 1fr 1fr 1fr;
     width: 100%;
     background-color: black;
     min-height: 10px;
@@ -140,6 +141,7 @@ footer {
 
 #coyright {
     grid-area: copyright;
+    text-align: center;
 }
 
 #credits {
