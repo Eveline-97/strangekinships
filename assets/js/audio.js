@@ -27,7 +27,7 @@ let wavesurfer = WaveSurfer.create({
 
 document.getElementById('high-quality').onclick = () => {
     wavesurfer.stop();
-    play.innerHTML = '⏵';
+    play.innerHTML = '\u23F5';
     curr = 'play';
     wavesurfer.load(wavFiles[chapterNumber - 1]);
     wavesurfer.on('ready', timeline());
@@ -37,7 +37,7 @@ const play = document.getElementById('play');
 play.onclick = () => togglePlay();
 document.getElementById('stop').onclick = () => {
     wavesurfer.stop();
-    play.innerHTML = '⏵';
+    play.innerHTML = '\u23F5';
     curr = 'play';
     timeline();
 }
@@ -46,11 +46,11 @@ let curr = 'play';
 const togglePlay = () => {
     if (curr == 'play') {
         wavesurfer.play();
-        play.innerHTML = '⏸';
+        play.innerHTML = '\u23F8';
         curr = 'pause';
     } else {
         wavesurfer.pause();
-        play.innerHTML = '⏵';
+        play.innerHTML = '\u23F5';
         curr = 'play';
         timeline();
     }
@@ -58,7 +58,7 @@ const togglePlay = () => {
 
 wavesurfer.on('interaction', () => {
     wavesurfer.pause();
-    play.innerHTML = '⏵';
+    play.innerHTML = '\u23F5';
     curr = 'play';
     timeline();
 })
