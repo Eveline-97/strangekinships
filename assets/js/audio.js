@@ -26,16 +26,9 @@ let wavesurfer = WaveSurfer.create({
 });
 
 document.getElementById('high-quality').onclick = () => {
-    wavesurfer = WaveSurfer.create({
-        container: '#waveform',
-        waveColor: 'rgb(252, 255, 94)',
-        progressColor: 'black',
-        url: wavFiles[chapterNumber - 1],
-    });
-
-    // remove previous div
-    let mp3Child = document.getElementById('waveform').childNodes[1];
-    mp3Child.style.display = 'none';
+   wavesurfer.stop();
+   wavesurfer.load(wavFiles[chapterNumber - 1]);
+   wavesurfer.on('ready', timeline());
 }
 
 const play = document.getElementById('play');
@@ -46,7 +39,6 @@ document.getElementById('stop').onclick = () => {
     curr = 'play';
     timeline();
 }
-timeline();
 
 let curr = 'play';
 const togglePlay = () => {
