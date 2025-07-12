@@ -1,11 +1,11 @@
 import WaveSurfer from 'https://cdn.jsdelivr.net/npm/wavesurfer.js@7/dist/wavesurfer.esm.js'
 
 const files = [
-    "./assets/audio/1_Introduction_StrangeKinships.wav",
-    "./assets/audio/2_Walking_StrangeKinships.wav",
-    "./assets/audio/3_Voice_StrangeKinships.wav",
-    "./assets/audio/4_Orientation_StrangeKinships.wav",
-    "./assets/audio/5_Flight_StrangeKinships.wav"
+    "./assets/audio/1_Introduction_StrangeKinships.mp3",
+    "./assets/audio/2_Walking_StrangeKinships.mp3",
+    "./assets/audio/3_Voice_StrangeKinships.mp3",
+    "./assets/audio/4_Orientation_StrangeKinships.mp3",
+    "./assets/audio/5_Flight_StrangeKinships.mp3"
 ]
 
 let chapterNumber = pageName.slice(-1);
