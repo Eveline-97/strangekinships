@@ -26,9 +26,11 @@ let wavesurfer = WaveSurfer.create({
 });
 
 document.getElementById('high-quality').onclick = () => {
-   wavesurfer.stop();
-   wavesurfer.load(wavFiles[chapterNumber - 1]);
-   wavesurfer.on('ready', timeline());
+    wavesurfer.stop();
+    play.innerHTML = '⏵';
+    curr = 'play';
+    wavesurfer.load(wavFiles[chapterNumber - 1]);
+    wavesurfer.on('ready', timeline());
 }
 
 const play = document.getElementById('play');
