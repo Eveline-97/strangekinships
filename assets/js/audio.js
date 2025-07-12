@@ -8,14 +8,35 @@ const files = [
     "./assets/audio/5_Flight_StrangeKinships.mp3"
 ]
 
+const wavFiles = [
+    "./assets/audio/1_Introduction_StrangeKinships.wav",
+    "./assets/audio/2_Walking_StrangeKinships.wav",
+    "./assets/audio/3_Voice_StrangeKinships.wav",
+    "./assets/audio/4_Orientation_StrangeKinships.wav",
+    "./assets/audio/5_Flight_StrangeKinships.wav"
+]
+
 let chapterNumber = pageName.slice(-1);
 
-const wavesurfer = WaveSurfer.create({
+let wavesurfer = WaveSurfer.create({
     container: '#waveform',
     waveColor: 'rgb(252, 255, 94)',
     progressColor: 'black',
     url: files[chapterNumber - 1],
 });
+
+document.getElementById('high-quality').onclick = () => {
+    wavesurfer = WaveSurfer.create({
+        container: '#waveform',
+        waveColor: 'rgb(252, 255, 94)',
+        progressColor: 'black',
+        url: wavFiles[chapterNumber - 1],
+    });
+
+    // remove previous div
+    let mp3Child = document.getElementById('waveform').childNodes[1];
+    mp3Child.style.display = 'none';
+}
 
 const play = document.getElementById('play');
 play.onclick = () => togglePlay();

@@ -458,7 +458,20 @@ button {
 #timeline p {
     background-color: rgba(0, 0, 0, 0);
     color: var(--yellow);
+}
+
+#timeline p:first-child {
     margin-top: -5em;
+}
+
+#high-quality {
+    margin-top: -1em;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#high-quality:hover, #high-quality:active {
+    text-decoration: none;
 }
 
 /*=== Map ===*/
