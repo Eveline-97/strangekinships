@@ -130,6 +130,10 @@
         font-size: 1em;
     }
 
+    h3#chapterName {
+        font-size: 0.9em;
+    }
+
     li,
     p {
         font-size: 0.8em;
@@ -165,5 +169,15 @@
         font-size: 0.7em;
         width: 120px;
         padding: 1px 5px;
+    }
+}
+
+@media screen and (max-width: 260px) {
+    h1 {
+        font-size: 1.3em;
+    }
+
+    h3#chapterName {
+        font-size: 0.8em;
     }
 }
