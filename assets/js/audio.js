@@ -1,4 +1,4 @@
-import WaveSurfer from 'https://cdn.jsdelivr.net/npm/wavesurfer.js@7/dist/wavesurfer.esm.js'
+import WaveSurfer from 'https://cdn.jsdelivr.net/npm/wavesurfer.js@7/dist/wavesurfer.esm.js';
 
 const files = [
     "./assets/audio/1_Introduction_StrangeKinships.mp3",
@@ -56,12 +56,7 @@ const togglePlay = () => {
     }
 }
 
-wavesurfer.on('interaction', () => {
-    wavesurfer.pause();
-    play.innerHTML = '\u23F5';
-    curr = 'play';
-    timeline();
-})
+wavesurfer.on('interaction', () => timeline());
 
 wavesurfer.on('audioprocess', function () {
     timeline();
